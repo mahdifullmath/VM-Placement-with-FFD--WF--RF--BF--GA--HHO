@@ -56,12 +56,12 @@ using namespace std;
 #define ALG5 "RF"
 #define ALG6 "GA"
 #define ALG7 "HHO"
-#define NUM_ALGS 7
+#define NUM_ALGS 6
 #define NUM_PARAMERTERS 6 // POWER, WASTAGE   NumActivePMs  UtilCPU UtilMEM ExeTime
 #define NUM_ITERATION NUM_ITERATIONS_FOR_AVG
 
 string parameterNames[NUM_PARAMERTERS] = {"Power", "Wastage", "numActivePMs", "utilCPU", "utilMEM", "tExecution"};
-string algNames[NUM_ALGS] = {" FFD ", " RF ", " BF", " WF ", " GA ","HHO"};
+string algNames[NUM_ALGS] = {" FFD ", " RF ", " BF", " WF ", " GA ", "HHO"};
 
 float resultsAllAlgorithmsAllIterations[NUM_ALGS][NUM_PARAMERTERS][NUM_ITERATION];
 
@@ -142,7 +142,7 @@ int runHHO(idata PMserv, unsigned int iterationForAvg, unsigned int algIndex)
 
 	gettimeofday(&st_t, NULL);
 	std::cout << " running HHO algorithm" << std::endl;
-	Hho hho1(GA_epoch, GA_pop_size, GA_num_dims);
+	Hho hho1(Hho_epoch, Hho_pop_size, Hho_num_dims);
 	hho1.initialize(PMserv.iVMs);
 
 	if (VERBOSE)
@@ -397,10 +397,10 @@ int main()
 		// algNames[7] = { " FFD "," RF ", " BF"," WF ", " GA ", " EVO " ," CRO "};
 
 		runFFD(PMServ, iter, 0);
-		//runRF(PMServ, iter, 1);
-		//runBF(PMServ, iter, 2);
-		//runWF(PMServ, iter, 3);
-		//runGA(PMServ, iter, 4);
+		runRF(PMServ, iter, 1);
+		runBF(PMServ, iter, 2);
+		runWF(PMServ, iter, 3);
+		runGA(PMServ, iter, 4);
 		runHHO(PMServ, iter, 5);
 		printAllResultsInAFile();
 		cout << "Simulation at iteration " << iter << " Ended OK" << endl;

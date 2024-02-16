@@ -43,7 +43,7 @@ void Hho:: run( vector<vm> vms,  vector<pm> servers) {
             //scoutPhase(vms, servers);
             if (energy > 1)			//exploration
             	explorePhase(vms, servers);
-            else if (energy >0.5)	//exploitation Soft besiege with progressive rapid dives
+            else if (energy > 0.5)	//exploitation Soft besiege with progressive rapid dives
             	exploitPhase(vms, servers);
             else 					//exploitation Hard besiege with progressive rapid dives
             	attackPhase(vms, servers);
@@ -108,7 +108,7 @@ void Placement::explore() {
 
 void Hho::explorePhase(vector<vm> vms, vector<pm> servers) {
     // Iterate through the population
-    for (int i = 0; i < pop_size - 1; i+=2) {
+    for (int i = 0; i < pop_size - 1 ; i+=2) {
         // Select a random index within the structure
     	Placement newPlacement;
     	newPlacement = explore(pop[i] , pop[i+1] , servers , vms);
@@ -118,15 +118,18 @@ void Hho::explorePhase(vector<vm> vms, vector<pm> servers) {
 		swap(pop[i+1].structure[rand1], pop[i+1].structure[rand2]);
     	// Recalculate the fitness of the placement after the VM move
     	pop[i+1].calculateFitPlacement(servers, vms);
-
+    	updateBestPlacement(pop[i+1]);
+    	updateWorstPlacement(pop[i+1]);
     	pop[i] = newPlacement;
         // Recalculate the fitness of the placement after the VM move
         pop[i].calculateFitPlacement(servers, vms);
-
+        updateBestPlacement(pop[i]);
+        updateWorstPlacement(pop[i]);
         // Update the best and worst fitness if necessary
 
+
     }
-    setBestAndWorstPlacements();
+    //setBestAndWorstPlacements();
 }
 
 /*
@@ -219,12 +222,17 @@ void Hho::exploitPhase( vector<vm> vms,  vector<pm> servers) {
     	srand(time(0));
     	double random_number = (double)rand() / RAND_MAX;
     	if (random_number < Hho_expolit_rate){
-    		int rand1 = rand() % (num_vm_experiment);
-    		int rand2 = rand() % (num_vm_experiment);
-    		swap(pop[i].structure[rand1], pop[i].structure[rand2]);
+    		Placement newPlacement;
+    		newPlacement = explore(pop[i] , bestPlacement , servers , vms);
+    		pop[i] = newPlacement;
+    		// Recalculate the fitness of the placement after the VM move
+    		pop[i].calculateFitPlacement(servers, vms);
+    		updateBestPlacement(pop[i]);
+    		updateWorstPlacement(pop[i]);
+
     	}
     	else{
-    		pop[i] = bestPlacement;
+    		//pop[i] = bestPlacement;
     		int rand1 = rand() % (num_vm_experiment);
     		int rand2 = rand() % (num_vm_experiment);
     		if (rand2 < rand1)
@@ -235,20 +243,32 @@ void Hho::exploitPhase( vector<vm> vms,  vector<pm> servers) {
     	}
 		// Recalculate the fitness of the placement after the VM move
 		pop[i].calculateFitPlacement(servers, vms);
+		updateBestPlacement(pop[i]);
+		updateWorstPlacement(pop[i]);
+
     }
-    setBestAndWorstPlacements();
+    //setBestAndWorstPlacements();
 }
 
 void Hho::attackPhase( vector<vm> vms,  vector<pm> servers) {
 	for (int i = 0; i < pop_size; i++) {
+
 		Placement randPlacement = pop[i];
 		int rand1 = rand() % (num_vm_experiment);
 		int rand2 = rand() % (num_vm_experiment);
-		swap(randPlacement.structure[rand1], randPlacement.structure[rand2]);
+		if (rand2 < rand1)
+		    swap(rand2 , rand1);
+		for (int j = rand1 ; j <= rand2 / 2 ; j++){
+		    swap(randPlacement.structure[j], randPlacement.structure[rand2-j]);
+		    		}
+//		swap(randPlacement.structure[rand1], randPlacement.structure[rand2]);
+		srand(time(0));
 		randPlacement.calculateFitPlacement(servers, vms);
 		float random_number = (float)rand() / RAND_MAX;
-		if (randPlacement.fit < bestFit || random_number <  Hho_attack_rate)
+		if (randPlacement.fit < bestFit || random_number <  Hho_attack_rate){
 			pop[i] = randPlacement;
+
+		}
 		else{
 			pop[i] = bestPlacement;
 			int rand1 = rand() % (num_vm_experiment);
@@ -257,8 +277,9 @@ void Hho::attackPhase( vector<vm> vms,  vector<pm> servers) {
 		}
 		pop[i].calculateFitPlacement(servers, vms);
 		updateBestPlacement(pop[i]);
+		updateWorstPlacement(pop[i]);
 	}
-    setBestAndWorstPlacements();
+    //setBestAndWorstPlacements();
 }
 /*
 void Hho::attackPhase(vector<vm> vms, vector<pm> servers) {
@@ -371,8 +392,8 @@ void Hho::initialize(vector<vm> VMList)
 	bestPow_dis = 1e+30;
 	bestResourceWastage = 1e+30;
 	currentIteration = 0;
-	//crossOverCount = 0, mutationCount = 0;
-	//numFuncEval_Hho = 0;
+	crossOverCount = 0, mutationCount = 0;
+	numFuncEval_Hho = 0;
 }
 
 void Hho::printPop()
@@ -391,73 +412,73 @@ void Hho::printPop()
 		std::cout << std::endl;
 	}
 }
-//// TODO: assign a proper and valid ID to each newly created Placement
-//void Hho::printPlacementVector(vector<Placement> vectPlacements)
-//{
-//	cout << endl;
-//	for (std::vector<Placement>::iterator it1 = vectPlacements.begin(); it1 != vectPlacements.end(); ++it1)
-//	{
-//		std::cout << "Placement-" << it1->PlacementID << ":";
-//		for (std::vector<vmPlacement>::iterator it2 = it1->structure.begin(); it2 != it1->structure.end(); ++it2)
-//		{
-//			std::cout << " " << it2->id;
-//		}
-//		std::cout << std::endl;
-//	}
-//}
-//
-//void Hho::calculateFitnessPop(vector<pm> PMList, vector<vm> VMList)
-//{
-//	int i = 0;
-//	for (auto xx : pop)
-//	{
-//		xx.calculateFitPlacement(PMList, VMList);
-//		if (xx.fit < bestFit)
-//		{
-//			bestPlacement = xx;
-//			bestFit = xx.fit;
-//		}
-//		if (xx.fit > worstFit)
-//		{
-//			worstPlacement = xx;
-//			worstFit = xx.fit;
-//		}
-//		if (VERBOSE)
-//			cout << "Atm-" << xx.PlacementID << " is " << xx.fit << endl;
-//		this->pop[i].fit = xx.fit;
-//		i++;
-//	}
-//	if (VERBOSE)
-//		cout << endl;
-//}
-//
-//void Hho::sortPopFitnessDecreasing()
-//{
-//	// NOTE: a higher fitness is worse since power is used as the fitness.
-//	int i = 0;
-//	for (unsigned int i = 0; i < pop.size(); i++)
-//	{
-//		for (unsigned int j = i + 1; j < pop.size(); j++)
-//		{
-//			unsigned int tmp1 = pop[i].fit;
-//			unsigned int tmp2 = pop[j].fit;
-//
-//			if (tmp1 > tmp2)
-//			{
-//				swap(pop[i], pop[j]);
-//			}
-//		}
-//	}
-//}
-//
-//void Hho::printFitPop()
-//{
-//	for (std::vector<Placement>::iterator it1 = pop.begin(); it1 != pop.end(); ++it1)
-//	{
-//		std::cout << "Fit Placement-" << it1->PlacementID << ": " << it1->fit << endl;
-//	}
-//}
-//
+// TODO: assign a proper and valid ID to each newly created Placement
+void Hho::printPlacementVector(vector<Placement> vectPlacements)
+{
+	cout << endl;
+	for (std::vector<Placement>::iterator it1 = vectPlacements.begin(); it1 != vectPlacements.end(); ++it1)
+	{
+		std::cout << "Placement-" << it1->PlacementID << ":";
+		for (std::vector<vmPlacement>::iterator it2 = it1->structure.begin(); it2 != it1->structure.end(); ++it2)
+		{
+			std::cout << " " << it2->id;
+		}
+		std::cout << std::endl;
+	}
+}
+
+void Hho::calculateFitnessPop(vector<pm> PMList, vector<vm> VMList)
+{
+	int i = 0;
+	for (auto xx : pop)
+	{
+		xx.calculateFitPlacement(PMList, VMList);
+		if (xx.fit < bestFit)
+		{
+			bestPlacement = xx;
+			bestFit = xx.fit;
+		}
+		if (xx.fit > worstFit)
+		{
+			worstPlacement = xx;
+			worstFit = xx.fit;
+		}
+		if (VERBOSE)
+			cout << "Atm-" << xx.PlacementID << " is " << xx.fit << endl;
+		this->pop[i].fit = xx.fit;
+		i++;
+	}
+	if (VERBOSE)
+		cout << endl;
+}
+
+void Hho::sortPopFitnessDecreasing()
+{
+	// NOTE: a higher fitness is worse since power is used as the fitness.
+	int i = 0;
+	for (unsigned int i = 0; i < pop.size(); i++)
+	{
+		for (unsigned int j = i + 1; j < pop.size(); j++)
+		{
+			unsigned int tmp1 = pop[i].fit;
+			unsigned int tmp2 = pop[j].fit;
+
+			if (tmp1 > tmp2)
+			{
+				swap(pop[i], pop[j]);
+			}
+		}
+	}
+}
+
+void Hho::printFitPop()
+{
+	for (std::vector<Placement>::iterator it1 = pop.begin(); it1 != pop.end(); ++it1)
+	{
+		std::cout << "Fit Placement-" << it1->PlacementID << ": " << it1->fit << endl;
+	}
+}
+
 void Hho::evolve(vector<pm> PMList, vector<vm> VMList, std::ofstream &fileName, unsigned int iterationForAvg)
 {
 	char name_of[100];
@@ -497,13 +518,13 @@ void Hho::evolve(vector<pm> PMList, vector<vm> VMList, std::ofstream &fileName, 
 			printPop();
 		// cout<<"Best fit in iteration-"<<idx<<": "<<bestFit<<endl;
 
-		int s = (10 * pop_size) / 100;
-		for (int i = 0; i < s; i++)
-			newPop.push_back(pop[i]);
-
-		// From 50% of fittest pop, Placements
+//		int s = (10 * pop_size) / 100;
+//		for (int i = 0; i < s; i++)
+//			newPop.push_back(pop[i]);
+//
+//		// From 50% of fittest pop, Placements
 		// will mate to produce offspring
-		s = pop_size - s; //(90*pop_size)/100;
+//		s = pop_size - s; //(90*pop_size)/100;
 //		for (int i = 0; i < s; i++)
 //		{
 //			//   int len = pop.size();
@@ -515,9 +536,9 @@ void Hho::evolve(vector<pm> PMList, vector<vm> VMList, std::ofstream &fileName, 
 //			//newPop.push_back(offspring);
 //		}
 //		newPop = mutate(newPop);
-		this->run(VMList, PMList);
+		run(VMList, PMList);
 		currentIteration++;
-		energy = energy - max_energy_Hho/Hho_epoch;
+		energy = energy - max_energy_Hho / Hho_epoch;
 		cnt_print++;
 		// Hho_convergence << cnt<<","<<pop[0].fit<<"\n";
 		cout << currentIteration << "...";
@@ -529,13 +550,13 @@ void Hho::evolve(vector<pm> PMList, vector<vm> VMList, std::ofstream &fileName, 
 
 		if (VERBOSE)
 			printPlacementVector(addedPlacementsIteration);
-		pop.clear();
+//		pop.clear();
 		// Placements added/removed in alpha/beta/Hhomma reaction are now added/removed to pop
 		// note: in Positron, the worst Placements are merged and added to pop while the worst Placements are removed
 		if (VERBOSE)
 			printPlacementVector(addedPlacementsIteration);
-		for (auto z : addedPlacementsIteration)
-			pop.push_back(z);
+//		for (auto z : addedPlacementsIteration)
+//			pop.push_back(z);
 		addedPlacementsIteration.clear(); //(addedPlacementsIteration.begin(),addedPlacementsIteration.end());
 		/* for(auto z:toBeRemovedPlacementsIteration){
 			unsigned int idxPlacement=findPlacementIDxInPop(z);
@@ -563,12 +584,12 @@ void Hho::evolve(vector<pm> PMList, vector<vm> VMList, std::ofstream &fileName, 
 
 vector<Placement> Hho::sortPopByFitnessDecreasingly()
 {
-    vector<Placement> sortedpop = pop;
-    sort(sortedpop.begin(), sortedpop.end(),
+ /*   vector<Placement> sortedPop = pop;
+    sort(sortedPop.begin(), sortedPop.end(),
         [](const Placement& a, const Placement& b) {
             return a.fit < b.fit;
-        });
-/*	vector<Placement> sortedPop;
+        });*/
+	vector<Placement> sortedPop;
 	sortedPop = pop;
 	for (unsigned int i = 0; i < sortedPop.size(); i++)
 	{
@@ -581,8 +602,8 @@ vector<Placement> Hho::sortPopByFitnessDecreasingly()
 				swap(sortedPop[i], sortedPop[j]);
 			}
 		}
-	}*/
-	return sortedpop;
+	}
+	return sortedPop;
 }
 
 unsigned int Hho::findPlacementIdInPop(Placement thePlacement)
@@ -700,49 +721,6 @@ void Hho::setBestAndWorstPlacements()
 	bestFit = fitArray[0];
 }
 
-void Hho::calculateFitnessPop(vector<pm> PMList, vector<vm> VMList)
-{
-	int i = 0;
-	for (auto xx : pop)
-	{
-		xx.calculateFitPlacement(PMList, VMList);
-		if (xx.fit < bestFit)
-		{
-			bestPlacement = xx;
-			bestFit = xx.fit;
-		}
-		if (xx.fit > worstFit)
-		{
-			worstPlacement = xx;
-			worstFit = xx.fit;
-		}
-		if (VERBOSE)
-			cout << "Atm-" << xx.PlacementID << " is " << xx.fit << endl;
-		this->pop[i].fit = xx.fit;
-		i++;
-	}
-	if (VERBOSE)
-		cout << endl;
-}
-
-void Hho::sortPopFitnessDecreasing()
-{
-	// NOTE: a higher fitness is worse since power is used as the fitness.
-	int i = 0;
-	for (unsigned int i = 0; i < pop.size(); i++)
-	{
-		for (unsigned int j = i + 1; j < pop.size(); j++)
-		{
-			unsigned int tmp1 = pop[i].fit;
-			unsigned int tmp2 = pop[j].fit;
-
-			if (tmp1 > tmp2)
-			{
-				swap(pop[i], pop[j]);
-			}
-		}
-	}
-}
 vector<Placement> Hho::mutate(vector<Placement> popPlacements)
 {
 	mutationCount++;

@@ -109,7 +109,7 @@ static const int POWER_PMs[2][MAX_NUM_PM_TYPES * 2] = { // first row: P_idle sec
 
 // static int RACK_TYPES[MAX_NUM_RACK_TYPES][MAX_NUM_PM_TYPES];
 
-#define NUM_SERVICES 200 // setting parameter 1
+#define NUM_SERVICES 1000 // setting parameter 1
 
 const int num_pm_experiment = NUM_SERVICES; // setting parameter 2         oled:NUM_DC_PER_CLOUD*NUM_PM_PER_RACK*(NUM_RACK_PER_ROW)*NUM_ROW_PER_DC;
 
@@ -179,8 +179,9 @@ const float MUTATION_RATE = 0.1;
 // Number of individuals in each generation
 #define max_FE_ga 7500
 //---------------=================---------HHO-related parameters
-#define Hho_epoch 100
-#define Hho_pop_size 50
+#define Hho_epoch 120
+#define Hho_pop_size 60
+#define Hho_num_dims num_vm_experiment
 #define max_energy_Hho 2
 #define Hho_expolit_rate 0.5
 #define Hho_attack_rate 0.1
