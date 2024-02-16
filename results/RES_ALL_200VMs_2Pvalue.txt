@@ -1,0 +1,309 @@
+the results of all algorithms in all iterations for one VMCount and rho
+
+
+run-0
+
+Power:
+ FFD          RF          BF         WF          GA         HHO        
+4898.06	4525.78	4508.44	4670.08	4317.37	4318.07	
+
+Wastage:
+ FFD          RF          BF         WF          GA         HHO        
+0.0126938	0.00468539	0.00432924	0.00584069	0.00830948	0.00720244	
+
+numActivePMs:
+ FFD          RF          BF         WF          GA         HHO        
+23	21	21	22	20	20	
+
+utilCPU:
+ FFD          RF          BF         WF          GA         HHO        
+0.834312	0.91369	0.896468	0.840606	0.893917	0.898417	
+
+utilMEM:
+ FFD          RF          BF         WF          GA         HHO        
+0.841703	0.932024	0.939722	0.895	0.967833	0.971833	
+
+tExecution:
+ FFD          RF          BF         WF          GA         HHO        
+1995	1995	7978	7980	1.00861e+07	1.10239e+07	
+
+
+
+run-1
+
+Power:
+ FFD          RF          BF         WF          GA         HHO        
+4528.22	4205.74	4201.85	4318.7	4030.36	4026.14	
+
+Wastage:
+ FFD          RF          BF         WF          GA         HHO        
+0.0261245	0.00528758	0.00522247	0.00786695	0.00842663	0.00768944	
+
+numActivePMs:
+ FFD          RF          BF         WF          GA         HHO        
+22	19	19	20	18	18	
+
+utilCPU:
+ FFD          RF          BF         WF          GA         HHO        
+0.801326	0.900483	0.893684	0.864583	0.915556	0.906296	
+
+utilMEM:
+ FFD          RF          BF         WF          GA         HHO        
+0.897159	0.895482	0.883246	0.87175	0.941157	0.954028	
+
+tExecution:
+ FFD          RF          BF         WF          GA         HHO        
+998	998	3989	3991	9.94953e+06	1.09133e+07	
+
+
+
+run-2
+
+Power:
+ FFD          RF          BF         WF          GA         HHO        
+4225.41	3830.98	3831.95	3830.5	3797.26	3787.22	
+
+Wastage:
+ FFD          RF          BF         WF          GA         HHO        
+0.0160384	0.0026859	0.00312144	0.00277119	0.00667216	0.00777029	
+
+numActivePMs:
+ FFD          RF          BF         WF          GA         HHO        
+19	16	16	16	16	16	
+
+utilCPU:
+ FFD          RF          BF         WF          GA         HHO        
+0.810526	0.92125	0.922865	0.918854	0.873698	0.863385	
+
+utilMEM:
+ FFD          RF          BF         WF          GA         HHO        
+0.851272	0.925469	0.920156	0.929531	0.936771	0.933385	
+
+tExecution:
+ FFD          RF          BF         WF          GA         HHO        
+1994	997	3988	2994	9.66742e+06	1.09501e+07	
+
+
+
+run-3
+
+Power:
+ FFD          RF          BF         WF          GA         HHO        
+4792.34	4364.63	4350.93	4344.18	4195.56	4307.83	
+
+Wastage:
+ FFD          RF          BF         WF          GA         HHO        
+0.0245288	0.0066344	0.0109762	0.00851692	0.00352776	0.0174571	
+
+numActivePMs:
+ FFD          RF          BF         WF          GA         HHO        
+24	21	21	21	20	21	
+
+utilCPU:
+ FFD          RF          BF         WF          GA         HHO        
+0.824965	0.918254	0.897659	0.888254	0.971625	0.845119	
+
+utilMEM:
+ FFD          RF          BF         WF          GA         HHO        
+0.836319	0.909167	0.884127	0.886944	0.944917	0.910357	
+
+tExecution:
+ FFD          RF          BF         WF          GA         HHO        
+1995	998	2992	2992	9.84666e+06	1.09378e+07	
+
+
+
+run-4
+
+Power:
+ FFD          RF          BF         WF          GA         HHO        
+4828.89	4598.08	4601.05	4575.87	4566.07	4565.59	
+
+Wastage:
+ FFD          RF          BF         WF          GA         HHO        
+0.0141152	0.00645858	0.00566803	0.00759804	0.0113783	0.0128962	
+
+numActivePMs:
+ FFD          RF          BF         WF          GA         HHO        
+23	21	21	21	21	21	
+
+utilCPU:
+ FFD          RF          BF         WF          GA         HHO        
+0.868442	0.915794	0.919206	0.891032	0.881111	0.875318	
+
+utilMEM:
+ FFD          RF          BF         WF          GA         HHO        
+0.84692	0.903928	0.899762	0.882063	0.888889	0.902183	
+
+tExecution:
+ FFD          RF          BF         WF          GA         HHO        
+1996	996	2992	2992	9.71514e+06	1.0924e+07	
+
+
+
+run-5
+
+Power:
+ FFD          RF          BF         WF          GA         HHO        
+4036.99	3855.54	3849.47	3842.72	3802.21	3816.21	
+
+Wastage:
+ FFD          RF          BF         WF          GA         HHO        
+0.00760529	0.00528463	0.00604276	0.00384303	0.0144419	0.0109393	
+
+numActivePMs:
+ FFD          RF          BF         WF          GA         HHO        
+18	17	17	17	17	17	
+
+utilCPU:
+ FFD          RF          BF         WF          GA         HHO        
+0.839583	0.878971	0.876618	0.864559	0.802255	0.827794	
+
+utilMEM:
+ FFD          RF          BF         WF          GA         HHO        
+0.87588	0.921569	0.904559	0.902892	0.920882	0.914853	
+
+tExecution:
+ FFD          RF          BF         WF          GA         HHO        
+1995	998	2992	2992	9.70623e+06	1.09429e+07	
+
+
+
+run-6
+
+Power:
+ FFD          RF          BF         WF          GA         HHO        
+4437.43	4239.73	4240.8	4224.75	4204.98	4188.86	
+
+Wastage:
+ FFD          RF          BF         WF          GA         HHO        
+0.0194334	0.0126721	0.00699547	0.0101671	0.0146651	0.0197253	
+
+numActivePMs:
+ FFD          RF          BF         WF          GA         HHO        
+21	20	20	20	20	20	
+
+utilCPU:
+ FFD          RF          BF         WF          GA         HHO        
+0.850675	0.892708	0.894083	0.87225	0.844917	0.821083	
+
+utilMEM:
+ FFD          RF          BF         WF          GA         HHO        
+0.841587	0.907875	0.933792	0.920375	0.93	0.939333	
+
+tExecution:
+ FFD          RF          BF         WF          GA         HHO        
+998	996	3989	2992	9.7571e+06	1.1021e+07	
+
+
+
+run-7
+
+Power:
+ FFD          RF          BF         WF          GA         HHO        
+4452.12	4215.19	4217.49	4190.07	4020.47	4022.28	
+
+Wastage:
+ FFD          RF          BF         WF          GA         HHO        
+0.0222107	0.00610405	0.00486844	0.00717266	0.00612104	0.00438392	
+
+numActivePMs:
+ FFD          RF          BF         WF          GA         HHO        
+21	19	19	19	18	18	
+
+utilCPU:
+ FFD          RF          BF         WF          GA         HHO        
+0.828651	0.864298	0.87114	0.836974	0.91588	0.921528	
+
+utilMEM:
+ FFD          RF          BF         WF          GA         HHO        
+0.837421	0.916798	0.910307	0.892939	0.984444	0.983981	
+
+tExecution:
+ FFD          RF          BF         WF          GA         HHO        
+1994	999	2992	2993	9.82272e+06	1.11145e+07	
+
+
+
+run-8
+
+Power:
+ FFD          RF          BF         WF          GA         HHO        
+4813.33	4605.32	4490.12	4607.74	4465.22	4463.56	
+
+Wastage:
+ FFD          RF          BF         WF          GA         HHO        
+0.0153598	0.00639021	0.00461555	0.00564624	0.0101117	0.00916666	
+
+numActivePMs:
+ FFD          RF          BF         WF          GA         HHO        
+22	21	20	21	20	20	
+
+utilCPU:
+ FFD          RF          BF         WF          GA         HHO        
+0.877841	0.909722	0.936125	0.910397	0.902917	0.899417	
+
+utilMEM:
+ FFD          RF          BF         WF          GA         HHO        
+0.848144	0.922897	0.924375	0.902619	0.939542	0.933083	
+
+tExecution:
+ FFD          RF          BF         WF          GA         HHO        
+998	998	3988	3990	9.82272e+06	1.09787e+07	
+
+
+
+run-9
+
+Power:
+ FFD          RF          BF         WF          GA         HHO        
+4192.66	3946.67	3763.69	3917.24	3739.85	3735.09	
+
+Wastage:
+ FFD          RF          BF         WF          GA         HHO        
+0.0190828	0.00422079	0.00213911	0.00344061	0.00557094	0.00875415	
+
+numActivePMs:
+ FFD          RF          BF         WF          GA         HHO        
+19	17	16	17	16	16	
+
+utilCPU:
+ FFD          RF          BF         WF          GA         HHO        
+0.804386	0.929608	0.945417	0.890343	0.918125	0.900104	
+
+utilMEM:
+ FFD          RF          BF         WF          GA         HHO        
+0.835395	0.901275	0.926458	0.868578	0.934375	0.948125	
+
+tExecution:
+ FFD          RF          BF         WF          GA         HHO        
+996	998	3989	3990	9.71908e+06	1.09148e+07	
+
+
+
+avg
+
+Power:
+ FFD          RF          BF         WF          GA         HHO        
+4520.54	4238.77	4205.58	4252.19	4113.94	4123.09	
+
+Wastage:
+ FFD          RF          BF         WF          GA         HHO        
+0.0177193	0.00604237	0.00539787	0.00628634	0.00892249	0.0105985	
+
+numActivePMs:
+ FFD          RF          BF         WF          GA         HHO        
+21.2	19.2	19	19.4	18.6	18.7	
+
+utilCPU:
+ FFD          RF          BF         WF          GA         HHO        
+0.834071	0.904478	0.905327	0.877785	0.892	0.875846	
+
+utilMEM:
+ FFD          RF          BF         WF          GA         HHO        
+0.85118	0.913648	0.91265	0.895269	0.938881	0.939116	
+
+tExecution:
+ FFD          RF          BF         WF          GA         HHO        
+1595.9	1097.3	3988.9	3790.6	9.80927e+06	1.09721e+07	
+

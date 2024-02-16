@@ -1,0 +1,435 @@
+
+||=====Placement analysis result Iteration 0=====||
+
+||=====PM utilization report=====||
+PM-0 util CPU/Mem: 99.75 / 82.5
+PM-1 util CPU/Mem: 99.6667 / 100
+PM-2 util CPU/Mem: 100 / 98.5
+PM-3 util CPU/Mem: 99.5 / 99
+PM-4 util CPU/Mem: 99.8333 / 97.6667
+PM-5 util CPU/Mem: 99.75 / 99.75
+PM-6 util CPU/Mem: 95 / 98.8333
+PM-7 util CPU/Mem: 95 / 94.5
+PM-8 util CPU/Mem: 98.5 / 99.5
+PM-9 util CPU/Mem: 78 / 97
+PM-10 util CPU/Mem: 93 / 100
+PM-11 util CPU/Mem: 87.75 / 97.75
+PM-12 util CPU/Mem: 95.5 / 99
+PM-13 util CPU/Mem: 99 / 75
+PM-14 util CPU/Mem: 85 / 96.5
+PM-15 util CPU/Mem: 99 / 100
+PM-16 util CPU/Mem: 99 / 97
+PM-17 util CPU/Mem: 99.5 / 93.6667
+PM-18 util CPU/Mem: 98.75 / 93.5
+PM-19 util CPU/Mem: 96 / 93
+PM-20 util CPU/Mem: 87 / 93
+PM-21 util CPU/Mem: 97 / 90
+PM-22 util CPU/Mem: 100 / 99.5
+PM-23 util CPU/Mem: 93 / 62
+PM-24 util CPU/Mem: 44 / 91
+PM-25 util CPU/Mem: 99.8333 / 99.8333
+PM-26 util CPU/Mem: 99.5 / 98
+PM-27 util CPU/Mem: 92 / 99.25
+PM-28 util CPU/Mem: 81 / 100
+PM-29 util CPU/Mem: 100 / 92
+PM-30 util CPU/Mem: 98.75 / 95.25
+PM-31 util CPU/Mem: 100 / 99
+PM-32 util CPU/Mem: 99.75 / 95
+PM-33 util CPU/Mem: 90.5 / 95.5
+PM-34 util CPU/Mem: 99.25 / 92.75
+PM-35 util CPU/Mem: 99 / 92
+PM-36 util CPU/Mem: 92 / 99.8333
+PM-37 util CPU/Mem: 85 / 100
+PM-38 util CPU/Mem: 91 / 74
+PM-39 util CPU/Mem: 99 / 76
+PM-40 util CPU/Mem: 52 / 92
+PM-41 util CPU/Mem: 99.5 / 99.75
+PM-42 util CPU/Mem: 100 / 100
+PM-43 util CPU/Mem: 100 / 100
+PM-44 util CPU/Mem: 83 / 99
+PM-45 util CPU/Mem: 99 / 81.25
+PM-46 util CPU/Mem: 98.5 / 86
+PM-47 util CPU/Mem: 98 / 90
+PM-48 util CPU/Mem: 93 / 79
+PM-49 util CPU/Mem: 98.5 / 96.5
+PM-50 util CPU/Mem: 93.5 / 97.5
+PM-51 util CPU/Mem: 99.5 / 85.8333
+PM-52 util CPU/Mem: 100 / 90.5
+PM-53 util CPU/Mem: 98.75 / 92
+PM-54 util CPU/Mem: 91 / 98.5
+PM-55 util CPU/Mem: 97.25 / 98.75
+PM-56 util CPU/Mem: 92 / 100
+PM-57 util CPU/Mem: 95.6667 / 99.1667
+PM-58 util CPU/Mem: 98.5 / 88
+PM-59 util CPU/Mem: 99 / 85.25
+PM-60 util CPU/Mem: 90 / 99
+PM-61 util CPU/Mem: 98.25 / 73.25
+PM-62 util CPU/Mem: 100 / 89
+PM-63 util CPU/Mem: 99.5 / 92.25
+PM-64 util CPU/Mem: 96.6667 / 99.3333
+PM-65 util CPU/Mem: 98.5 / 82.75
+PM-66 util CPU/Mem: 48 / 99
+PM-67 util CPU/Mem: 99 / 100
+PM-68 util CPU/Mem: 98.75 / 99.25
+PM-69 util CPU/Mem: 95.5 / 93.5
+PM-70 util CPU/Mem: 97.5 / 86.25
+PM-71 util CPU/Mem: 90 / 78
+PM-72 util CPU/Mem: 98.5 / 98.25
+PM-73 util CPU/Mem: 95.6667 / 70.1667
+
+avg CPU util: 94.0214
+avg MEM util: 92.9133
+
+
+||====Main parameters====||
+Num active PMs: 74
+Num VMs: 750
+Settings (P value |  Rp  | Rm): 0 | 0 | 0
+Power: 16008.1 Watts
+Wastage: 0.0282833
+CPU Load Balance: 0.0639786
+MEM Load Balance: 0.0648402
+HHO Execution time(us): 1.10972e+08
+16008.1    0.0282833    74    0.940214    0.929133    1.10972e+08
+
+||=====Placement analysis result Iteration 1=====||
+
+||=====PM utilization report=====||
+PM-0 util CPU/Mem: 99.1667 / 95.6667
+PM-1 util CPU/Mem: 100 / 96
+PM-2 util CPU/Mem: 99.75 / 97.25
+PM-3 util CPU/Mem: 100 / 85.8333
+PM-4 util CPU/Mem: 99.3333 / 98.6667
+PM-5 util CPU/Mem: 98.5 / 100
+PM-6 util CPU/Mem: 76.5 / 97.5
+PM-7 util CPU/Mem: 39 / 95
+PM-8 util CPU/Mem: 99.6667 / 97.5
+PM-9 util CPU/Mem: 58 / 93
+PM-10 util CPU/Mem: 95.6667 / 98.6667
+PM-11 util CPU/Mem: 98 / 86.75
+PM-12 util CPU/Mem: 97 / 81
+PM-13 util CPU/Mem: 99.3333 / 95.5
+PM-14 util CPU/Mem: 99.5 / 89.3333
+PM-15 util CPU/Mem: 97.25 / 100
+PM-16 util CPU/Mem: 97.25 / 98
+PM-17 util CPU/Mem: 90.6667 / 100
+PM-18 util CPU/Mem: 98 / 94
+PM-19 util CPU/Mem: 97.3333 / 99.1667
+PM-20 util CPU/Mem: 95 / 98.5
+PM-21 util CPU/Mem: 98 / 94.75
+PM-22 util CPU/Mem: 98.6667 / 89.3333
+PM-23 util CPU/Mem: 96.5 / 99.25
+PM-24 util CPU/Mem: 87.75 / 99.25
+PM-25 util CPU/Mem: 98.8333 / 99.6667
+PM-26 util CPU/Mem: 86 / 99.5
+PM-27 util CPU/Mem: 82 / 97
+PM-28 util CPU/Mem: 99.6667 / 98
+PM-29 util CPU/Mem: 100 / 98
+PM-30 util CPU/Mem: 100 / 85.5
+PM-31 util CPU/Mem: 96.8333 / 99.8333
+PM-32 util CPU/Mem: 94.5 / 99.5
+PM-33 util CPU/Mem: 78 / 94
+PM-34 util CPU/Mem: 83.1667 / 99.3333
+PM-35 util CPU/Mem: 100 / 95.5
+PM-36 util CPU/Mem: 97.5 / 88.5
+PM-37 util CPU/Mem: 93.5 / 98
+PM-38 util CPU/Mem: 100 / 99
+PM-39 util CPU/Mem: 99.5 / 93
+PM-40 util CPU/Mem: 97.6667 / 99.6667
+PM-41 util CPU/Mem: 99.6667 / 97.5
+PM-42 util CPU/Mem: 97.1667 / 98.5
+PM-43 util CPU/Mem: 53 / 92
+PM-44 util CPU/Mem: 92.1667 / 99.5
+PM-45 util CPU/Mem: 99.3333 / 99.1667
+PM-46 util CPU/Mem: 89.5 / 98
+PM-47 util CPU/Mem: 98.8333 / 77.6667
+PM-48 util CPU/Mem: 94.75 / 99
+PM-49 util CPU/Mem: 79 / 93
+PM-50 util CPU/Mem: 99 / 92.6667
+PM-51 util CPU/Mem: 96 / 99
+PM-52 util CPU/Mem: 97 / 78
+PM-53 util CPU/Mem: 97 / 91
+PM-54 util CPU/Mem: 83 / 99
+PM-55 util CPU/Mem: 73 / 93
+PM-56 util CPU/Mem: 99 / 96.6667
+PM-57 util CPU/Mem: 89.5 / 79.25
+
+avg CPU util: 92.4124
+avg MEM util: 94.9454
+
+
+||====Main parameters====||
+Num active PMs: 58
+Num VMs: 750
+Settings (P value |  Rp  | Rm): 0 | 0 | 0
+Power: 13645.2 Watts
+Wastage: 0.0202282
+CPU Load Balance: 0.0821889
+MEM Load Balance: 0.0439051
+HHO Execution time(us): 1.08984e+08
+13645.2    0.0202282    58    0.924124    0.949454    1.08984e+08
+
+||=====Placement analysis result Iteration 2=====||
+
+||=====PM utilization report=====||
+PM-0 util CPU/Mem: 97 / 94
+PM-1 util CPU/Mem: 81.5 / 97.5
+PM-2 util CPU/Mem: 100 / 99.25
+PM-3 util CPU/Mem: 96.5 / 98.5
+PM-4 util CPU/Mem: 77 / 95
+PM-5 util CPU/Mem: 94 / 87
+PM-6 util CPU/Mem: 96 / 77
+PM-7 util CPU/Mem: 60 / 94
+PM-8 util CPU/Mem: 99.5 / 97.1667
+PM-9 util CPU/Mem: 53 / 92
+PM-10 util CPU/Mem: 100 / 98.5
+PM-11 util CPU/Mem: 88 / 92
+PM-12 util CPU/Mem: 91 / 82
+PM-13 util CPU/Mem: 91.5 / 99.75
+PM-14 util CPU/Mem: 92.5 / 96.5
+PM-15 util CPU/Mem: 98 / 92
+PM-16 util CPU/Mem: 99.1667 / 98.8333
+PM-17 util CPU/Mem: 97.5 / 95
+PM-18 util CPU/Mem: 99.8333 / 95.8333
+PM-19 util CPU/Mem: 96 / 98.6667
+PM-20 util CPU/Mem: 97 / 96.5
+PM-21 util CPU/Mem: 98.75 / 99
+PM-22 util CPU/Mem: 98 / 99.75
+PM-23 util CPU/Mem: 99.5 / 97.25
+PM-24 util CPU/Mem: 90 / 100
+PM-25 util CPU/Mem: 98.3333 / 99.8333
+PM-26 util CPU/Mem: 99.6667 / 88.6667
+PM-27 util CPU/Mem: 98.5 / 94.25
+PM-28 util CPU/Mem: 97 / 95
+PM-29 util CPU/Mem: 96.3333 / 100
+PM-30 util CPU/Mem: 100 / 99
+PM-31 util CPU/Mem: 86.5 / 97.5
+PM-32 util CPU/Mem: 97.5 / 99
+PM-33 util CPU/Mem: 83.5 / 99
+PM-34 util CPU/Mem: 98 / 95.5
+PM-35 util CPU/Mem: 96.1667 / 98.8333
+PM-36 util CPU/Mem: 99.5 / 100
+PM-37 util CPU/Mem: 98.25 / 94.5
+PM-38 util CPU/Mem: 85 / 100
+PM-39 util CPU/Mem: 67 / 96.5
+PM-40 util CPU/Mem: 97.75 / 96.75
+PM-41 util CPU/Mem: 99 / 99.8333
+PM-42 util CPU/Mem: 98.5 / 93.5
+PM-43 util CPU/Mem: 73 / 98.5
+PM-44 util CPU/Mem: 83 / 98
+PM-45 util CPU/Mem: 90 / 91
+PM-46 util CPU/Mem: 98 / 77
+PM-47 util CPU/Mem: 97 / 97
+PM-48 util CPU/Mem: 99.8333 / 91.6667
+PM-49 util CPU/Mem: 98.25 / 91.5
+PM-50 util CPU/Mem: 100 / 75
+PM-51 util CPU/Mem: 94.25 / 98.75
+PM-52 util CPU/Mem: 79 / 100
+PM-53 util CPU/Mem: 99.8333 / 85.1667
+PM-54 util CPU/Mem: 97.75 / 97.5
+PM-55 util CPU/Mem: 99 / 99.5
+PM-56 util CPU/Mem: 82.5 / 98.75
+PM-57 util CPU/Mem: 97.3333 / 98.5
+PM-58 util CPU/Mem: 99.6667 / 100
+PM-59 util CPU/Mem: 98.5 / 99.5
+PM-60 util CPU/Mem: 99.3333 / 88.5
+PM-61 util CPU/Mem: 99.5 / 99.5
+PM-62 util CPU/Mem: 98.5 / 100
+PM-63 util CPU/Mem: 95 / 93
+PM-64 util CPU/Mem: 97.5 / 99.25
+PM-65 util CPU/Mem: 73 / 92
+PM-66 util CPU/Mem: 99.5 / 98.5
+PM-67 util CPU/Mem: 98 / 100
+PM-68 util CPU/Mem: 91 / 99.8333
+PM-69 util CPU/Mem: 99.8333 / 99.5
+PM-70 util CPU/Mem: 83 / 89.5
+
+avg CPU util: 93.0822
+avg MEM util: 95.4589
+
+
+||====Main parameters====||
+Num active PMs: 71
+Num VMs: 750
+Settings (P value |  Rp  | Rm): 0 | 0 | 0
+Power: 15696.9 Watts
+Wastage: 0.0196544
+CPU Load Balance: 0.0714719
+MEM Load Balance: 0.0411896
+HHO Execution time(us): 1.12086e+08
+15696.9    0.0196544    71    0.930822    0.954589    1.12086e+08
+
+||=====Placement analysis result Iteration 3=====||
+
+||=====PM utilization report=====||
+PM-0 util CPU/Mem: 98.5 / 96.5
+PM-1 util CPU/Mem: 96 / 82
+PM-2 util CPU/Mem: 97 / 87
+PM-3 util CPU/Mem: 98.3333 / 99.6667
+PM-4 util CPU/Mem: 85.3333 / 98.6667
+PM-5 util CPU/Mem: 99.8333 / 99.5
+PM-6 util CPU/Mem: 98.5 / 99
+PM-7 util CPU/Mem: 91 / 98.5
+PM-8 util CPU/Mem: 80 / 98
+PM-9 util CPU/Mem: 95.1667 / 100
+PM-10 util CPU/Mem: 99.75 / 99.75
+PM-11 util CPU/Mem: 98.5 / 95
+PM-12 util CPU/Mem: 98 / 93.75
+PM-13 util CPU/Mem: 98.5 / 100
+PM-14 util CPU/Mem: 74 / 93
+PM-15 util CPU/Mem: 98 / 99.5
+PM-16 util CPU/Mem: 83 / 97
+PM-17 util CPU/Mem: 97.5 / 99.75
+PM-18 util CPU/Mem: 99.8333 / 96.6667
+PM-19 util CPU/Mem: 94.25 / 100
+PM-20 util CPU/Mem: 98.25 / 89.75
+PM-21 util CPU/Mem: 66 / 100
+PM-22 util CPU/Mem: 94.5 / 99.5
+PM-23 util CPU/Mem: 98.75 / 97.75
+PM-24 util CPU/Mem: 91 / 87
+PM-25 util CPU/Mem: 64 / 91
+PM-26 util CPU/Mem: 92 / 96
+PM-27 util CPU/Mem: 99.5 / 100
+PM-28 util CPU/Mem: 92.75 / 97.75
+PM-29 util CPU/Mem: 91 / 98.5
+PM-30 util CPU/Mem: 46 / 92
+PM-31 util CPU/Mem: 98.1667 / 98.6667
+PM-32 util CPU/Mem: 77 / 99
+PM-33 util CPU/Mem: 99.3333 / 99
+PM-34 util CPU/Mem: 98.3333 / 99.6667
+PM-35 util CPU/Mem: 85.5 / 97.5
+PM-36 util CPU/Mem: 98 / 99
+PM-37 util CPU/Mem: 99.8333 / 95.8333
+PM-38 util CPU/Mem: 76 / 98.75
+PM-39 util CPU/Mem: 99.5 / 94.6667
+PM-40 util CPU/Mem: 56 / 91
+PM-41 util CPU/Mem: 97.5 / 87.5
+PM-42 util CPU/Mem: 96 / 83
+PM-43 util CPU/Mem: 98 / 86.75
+PM-44 util CPU/Mem: 86 / 100
+PM-45 util CPU/Mem: 98.6667 / 97.1667
+PM-46 util CPU/Mem: 98 / 90.5
+PM-47 util CPU/Mem: 98 / 99.5
+PM-48 util CPU/Mem: 87 / 99
+PM-49 util CPU/Mem: 69 / 91
+PM-50 util CPU/Mem: 99 / 90
+PM-51 util CPU/Mem: 99.25 / 95.5
+PM-52 util CPU/Mem: 100 / 94
+PM-53 util CPU/Mem: 84.5 / 97
+PM-54 util CPU/Mem: 98.3333 / 99.6667
+PM-55 util CPU/Mem: 98.25 / 91.25
+PM-56 util CPU/Mem: 100 / 99.6667
+PM-57 util CPU/Mem: 71 / 94
+PM-58 util CPU/Mem: 98 / 100
+PM-59 util CPU/Mem: 97 / 87
+PM-60 util CPU/Mem: 95 / 100
+PM-61 util CPU/Mem: 99.6667 / 98
+PM-62 util CPU/Mem: 97 / 99.5
+PM-63 util CPU/Mem: 63 / 99
+PM-64 util CPU/Mem: 99.3333 / 99.8333
+PM-65 util CPU/Mem: 89.5 / 99.5
+PM-66 util CPU/Mem: 97 / 82.5
+PM-67 util CPU/Mem: 95 / 87
+PM-68 util CPU/Mem: 94.5 / 95.5
+PM-69 util CPU/Mem: 99.6667 / 99.3333
+PM-70 util CPU/Mem: 98 / 95
+PM-71 util CPU/Mem: 91 / 99
+PM-72 util CPU/Mem: 81.6667 / 94.5
+
+avg CPU util: 91.4555
+avg MEM util: 95.7089
+
+
+||====Main parameters====||
+Num active PMs: 73
+Num VMs: 750
+Settings (P value |  Rp  | Rm): 0 | 0 | 0
+Power: 15722.3 Watts
+Wastage: 0.0281968
+CPU Load Balance: 0.0862948
+MEM Load Balance: 0.0391709
+HHO Execution time(us): 1.12181e+08
+15722.3    0.0281968    73    0.914555    0.957089    1.12181e+08
+
+||=====Placement analysis result Iteration 4=====||
+
+||=====PM utilization report=====||
+PM-0 util CPU/Mem: 87 / 91
+PM-1 util CPU/Mem: 97.5 / 100
+PM-2 util CPU/Mem: 100 / 75
+PM-3 util CPU/Mem: 100 / 81
+PM-4 util CPU/Mem: 100 / 99.5
+PM-5 util CPU/Mem: 98 / 99.5
+PM-6 util CPU/Mem: 99 / 96.75
+PM-7 util CPU/Mem: 78.5 / 100
+PM-8 util CPU/Mem: 100 / 96.75
+PM-9 util CPU/Mem: 99.6667 / 87.5
+PM-10 util CPU/Mem: 99.5 / 84
+PM-11 util CPU/Mem: 99.1667 / 95.8333
+PM-12 util CPU/Mem: 100 / 77
+PM-13 util CPU/Mem: 99.5 / 100
+PM-14 util CPU/Mem: 95.8333 / 99.6667
+PM-15 util CPU/Mem: 99 / 94
+PM-16 util CPU/Mem: 94.5 / 99.25
+PM-17 util CPU/Mem: 97 / 98.5
+PM-18 util CPU/Mem: 98 / 100
+PM-19 util CPU/Mem: 97.75 / 98.5
+PM-20 util CPU/Mem: 94.1667 / 100
+PM-21 util CPU/Mem: 97 / 98
+PM-22 util CPU/Mem: 97 / 77
+PM-23 util CPU/Mem: 98.6667 / 100
+PM-24 util CPU/Mem: 94.75 / 98.75
+PM-25 util CPU/Mem: 100 / 82
+PM-26 util CPU/Mem: 91.8333 / 98.6667
+PM-27 util CPU/Mem: 59 / 100
+PM-28 util CPU/Mem: 70 / 99
+PM-29 util CPU/Mem: 83 / 97.5
+PM-30 util CPU/Mem: 91 / 99.1667
+PM-31 util CPU/Mem: 97.25 / 100
+PM-32 util CPU/Mem: 100 / 96.5
+PM-33 util CPU/Mem: 80 / 96.5
+PM-34 util CPU/Mem: 99.5 / 94
+PM-35 util CPU/Mem: 97.75 / 99.5
+PM-36 util CPU/Mem: 98 / 100
+PM-37 util CPU/Mem: 100 / 99.75
+PM-38 util CPU/Mem: 99.1667 / 99.8333
+PM-39 util CPU/Mem: 98 / 86.5
+PM-40 util CPU/Mem: 100 / 96.5
+PM-41 util CPU/Mem: 99 / 100
+PM-42 util CPU/Mem: 81.5 / 100
+PM-43 util CPU/Mem: 82 / 95
+PM-44 util CPU/Mem: 97.8333 / 99.5
+PM-45 util CPU/Mem: 93.5 / 99.3333
+PM-46 util CPU/Mem: 99.5 / 99.75
+PM-47 util CPU/Mem: 98.5 / 98
+PM-48 util CPU/Mem: 95.5 / 98
+PM-49 util CPU/Mem: 99.8333 / 99.3333
+PM-50 util CPU/Mem: 96.1667 / 99.8333
+PM-51 util CPU/Mem: 99.75 / 99.25
+PM-52 util CPU/Mem: 95.3333 / 99.6667
+PM-53 util CPU/Mem: 98.5 / 99
+PM-54 util CPU/Mem: 93 / 86
+PM-55 util CPU/Mem: 98.25 / 98.75
+PM-56 util CPU/Mem: 89.5 / 99.5
+PM-57 util CPU/Mem: 88.25 / 100
+PM-58 util CPU/Mem: 91 / 99
+PM-59 util CPU/Mem: 92 / 67
+PM-60 util CPU/Mem: 97 / 97.75
+PM-61 util CPU/Mem: 100 / 99.3333
+PM-62 util CPU/Mem: 98.75 / 99.5
+PM-63 util CPU/Mem: 98.3333 / 92.6667
+
+avg CPU util: 94.8281
+avg MEM util: 95.6107
+
+
+||====Main parameters====||
+Num active PMs: 64
+Num VMs: 750
+Settings (P value |  Rp  | Rm): 0 | 0 | 0
+Power: 14731.3 Watts
+Wastage: 0.0170785
+CPU Load Balance: 0.0522608
+MEM Load Balance: 0.0514043
+HHO Execution time(us): 1.0999e+08
+14731.3    0.0170785    64    0.948281    0.956107    1.0999e+08

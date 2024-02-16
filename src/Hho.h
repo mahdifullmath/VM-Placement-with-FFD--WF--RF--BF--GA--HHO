@@ -80,7 +80,6 @@ public:
 	void explorePhase( vector<vm> vms,  vector<pm> servers);
 	void exploitPhase( vector<vm> vms,  vector<pm> servers);
 	void attackPhase( vector<vm> vms,  vector<pm> servers);
-	void updateBest();
 	void evolve(vector<pm> PMList, vector<vm> VMList, std::ofstream &fileName, unsigned int iterationForAvg);
 	void initialize(vector<vm> VMList);
 	void calculateFitnessPop(vector<pm> PMList, vector<vm> VMList); // calculate Placements' fitness and find best and worst Placements and save them in bestPlacement and worstPlacement Placements

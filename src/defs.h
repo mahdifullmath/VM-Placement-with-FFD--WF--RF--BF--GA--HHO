@@ -109,12 +109,12 @@ static const int POWER_PMs[2][MAX_NUM_PM_TYPES * 2] = { // first row: P_idle sec
 
 // static int RACK_TYPES[MAX_NUM_RACK_TYPES][MAX_NUM_PM_TYPES];
 
-#define NUM_SERVICES 500 // setting parameter 1
+#define NUM_SERVICES 100 // setting parameter 1
 
 const int num_pm_experiment = NUM_SERVICES; // setting parameter 2         oled:NUM_DC_PER_CLOUD*NUM_PM_PER_RACK*(NUM_RACK_PER_ROW)*NUM_ROW_PER_DC;
 
-#define NUM_ITERATIONS_FOR_AVG 10
-#define EXPERIMENT_P_VALUE_SELECTOR 2 // setting parameter 3 to select one P value
+#define NUM_ITERATIONS_FOR_AVG 5
+#define EXPERIMENT_P_VALUE_SELECTOR 4 // setting parameter 3 to select one P value
 
 const float P_array[5] = {0.00, 0.25, 0.50, 0.75, 1.0};
 const float Rp = 0.45, Rm = 0.45; // setting parameter 4,5

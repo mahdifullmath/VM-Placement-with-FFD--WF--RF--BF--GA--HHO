@@ -74,9 +74,11 @@ vector<vmGene> Chromosome::findMissingVMIndicesGa(Chromosome theChromosomeWithAl
 	// return a list of vmChromosome containing those missing VM indices (to be inserted into the structure to for a valid one)
 	vector<unsigned int> allVMIndices(structure.size());
 	iota(allVMIndices.begin(), allVMIndices.end(), 0);
+	if (VERBOSE){
 	for (auto x : allVMIndices)
 		cout << " " << x;
 	cout << endl;
+	}
 	vector<vmGene> missingIndices;
 	for (auto x : allVMIndices)
 	{

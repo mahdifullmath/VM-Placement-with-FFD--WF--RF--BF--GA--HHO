@@ -354,16 +354,6 @@ void Hho::putBubbleInIndicesWithDifferentCPUHho(Placement &p1, Placement &p2) {
 }
 */
 
-
-void Hho::updateBest() {
-	setBestAndWorstPlacements();
-        /*for(auto& solution : pop) {
-            if(solution.fit > bestPlacement.fit) {
-            	updateBestPlacement(solution );
-            }
-        }*/
-    }
-
 //
 //int randomNM(int start, int end)
 //{
@@ -554,7 +544,7 @@ void Hho::evolve(vector<pm> PMList, vector<vm> VMList, std::ofstream &fileName, 
 		energy = energy - max_energy_Hho / Hho_epoch;
 		cnt_print++;
 		// Hho_convergence << cnt<<","<<pop[0].fit<<"\n";
-		cout << currentIteration << "...";
+		cout <<"(HHO):" <<currentIteration << "...";
 		if (cnt_print == 100)
 		{
 			cout << endl;

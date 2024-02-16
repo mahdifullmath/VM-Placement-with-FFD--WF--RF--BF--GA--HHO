@@ -53,9 +53,9 @@ vector<vm> Placement::createVMListPlacement(vector<vm> VMList)
 float fitnessFunctionHho(float power, float wastage)
 {
 	float alpha = 1.0;
-	float beta = 10.0;
-	float fitness = alpha * power + beta * wastage;
-	// if maximizing: fitness=1/fitness;
+	float beta = 0.5;
+	float fitness = alpha * power + beta * wastage *100;//we need to rescale power and wastage
+	// if maximizing: fitness=1/fitness+1;
 	return fitness;
 }
 
