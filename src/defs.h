@@ -109,7 +109,7 @@ static const int POWER_PMs[2][MAX_NUM_PM_TYPES * 2] = { // first row: P_idle sec
 
 // static int RACK_TYPES[MAX_NUM_RACK_TYPES][MAX_NUM_PM_TYPES];
 
-#define NUM_SERVICES 1000 // setting parameter 1
+#define NUM_SERVICES 500 // setting parameter 1
 
 const int num_pm_experiment = NUM_SERVICES; // setting parameter 2         oled:NUM_DC_PER_CLOUD*NUM_PM_PER_RACK*(NUM_RACK_PER_ROW)*NUM_ROW_PER_DC;
 

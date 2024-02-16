@@ -64,7 +64,14 @@ string parameterNames[NUM_PARAMERTERS] = {"Power", "Wastage", "numActivePMs", "u
 string algNames[NUM_ALGS] = {" FFD ", " RF ", " BF", " WF ", " GA ", "HHO"};
 
 float resultsAllAlgorithmsAllIterations[NUM_ALGS][NUM_PARAMERTERS][NUM_ITERATION];
-
+double avgAllAlgorithmsAllIterations[NUM_ALGS][NUM_PARAMERTERS];
+void setzero(double arr[NUM_ALGS][NUM_PARAMERTERS]){
+	for (int i = 0; i < NUM_ALGS; i++) {
+	    for (int j = 0; j < NUM_PARAMERTERS; j++) {
+	        arr[i][j] = 0;
+	    }
+	}
+}
 // vector<pm> pm_list;
 // vector<vm> vm_list;
 // vector<service> service_list;
@@ -84,6 +91,7 @@ void saveResultsofIteration(unsigned int iterationForAvg, unsigned int algIndex,
 
 void printAllResultsInAFile()
 {
+	setzero(avgAllAlgorithmsAllIterations);
 	char name_of[100];
 	ofstream out_file_alg;
 	string str_of1;
@@ -112,11 +120,29 @@ void printAllResultsInAFile()
 			for (unsigned int i = 0; i < NUM_ALGS; i++)
 			{
 				out_file_alg << resultsAllAlgorithmsAllIterations[i][j][k] << "\t";
+				avgAllAlgorithmsAllIterations[i][j] = avgAllAlgorithmsAllIterations[i][j] + resultsAllAlgorithmsAllIterations[i][j][k];
 			}
 			out_file_alg << endl
 						 << endl;
 		}
 	}
+	out_file_alg << endl
+						 << endl
+						 << "avg" << endl
+						 << endl;
+	for (unsigned int j = 0; j < NUM_PARAMERTERS; j++)
+			{
+				out_file_alg << parameterNames[j] << ":" << endl;
+				for (unsigned int i = 0; i < NUM_ALGS; i++)
+					out_file_alg << algNames[i] << "        ";
+				out_file_alg << endl;
+				for (unsigned int i = 0; i < NUM_ALGS; i++)
+				{
+					out_file_alg << avgAllAlgorithmsAllIterations[i][j] / NUM_ITERATIONS_FOR_AVG << "\t";
+				}
+				out_file_alg << endl
+							 << endl;
+			}
 }
 
 

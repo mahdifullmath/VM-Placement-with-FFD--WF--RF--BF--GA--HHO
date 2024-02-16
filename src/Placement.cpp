@@ -92,9 +92,11 @@ vector<vmPlacement> Placement::findMissingVMIndicesHho(Placement thePlacementWit
 	// return a list of vmPlacement containing those missing VM indices (to be inserted into the structure to for a valid one)
 	vector<unsigned int> allVMIndices(structure.size());
 	iota(allVMIndices.begin(), allVMIndices.end(), 0);
+	if(VERBOSE){
 	for (auto x : allVMIndices)
 		cout << " " << x;
 	cout << endl;
+	}
 	vector<vmPlacement> missingIndices;
 	for (auto x : allVMIndices)
 	{

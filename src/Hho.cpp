@@ -115,7 +115,11 @@ void Hho::explorePhase(vector<vm> vms, vector<pm> servers) {
 
 		int rand1 = rand() % (num_vm_experiment);
 		int rand2 = rand() % (num_vm_experiment);
-		swap(pop[i+1].structure[rand1], pop[i+1].structure[rand2]);
+		if (rand2 < rand1)
+			swap(rand2 , rand1);
+		for (int j = rand1 ; j <= rand2 / 2 ; j++){
+			swap(pop[i+1].structure[j], pop[i+1].structure[rand2-j]);
+		}
     	// Recalculate the fitness of the placement after the VM move
     	pop[i+1].calculateFitPlacement(servers, vms);
     	updateBestPlacement(pop[i+1]);
@@ -222,9 +226,14 @@ void Hho::exploitPhase( vector<vm> vms,  vector<pm> servers) {
     	srand(time(0));
     	double random_number = (double)rand() / RAND_MAX;
     	if (random_number < Hho_expolit_rate){
-    		Placement newPlacement;
-    		newPlacement = explore(pop[i] , bestPlacement , servers , vms);
-    		pop[i] = newPlacement;
+    		//Placement newPlacement;
+    		//newPlacement = explore(pop[i] , bestPlacement , servers , vms);
+    		Placement newPlacement2 = pop[i];
+    		int rand1 = rand() % (num_vm_experiment);
+    		int rand2 = rand() % (num_vm_experiment);
+    		swap(newPlacement2.structure[rand1], newPlacement2.structure[rand2]);
+    		//pop[i] = newPlacement;
+    		pop[i] = newPlacement2;
     		// Recalculate the fitness of the placement after the VM move
     		pop[i].calculateFitPlacement(servers, vms);
     		updateBestPlacement(pop[i]);
@@ -254,16 +263,20 @@ void Hho::attackPhase( vector<vm> vms,  vector<pm> servers) {
 	for (int i = 0; i < pop_size; i++) {
 
 		Placement randPlacement = pop[i];
+		Placement randPlacement2 = pop[i];
 		int rand1 = rand() % (num_vm_experiment);
 		int rand2 = rand() % (num_vm_experiment);
+		swap(randPlacement2.structure[rand1], randPlacement2.structure[rand2]);
 		if (rand2 < rand1)
 		    swap(rand2 , rand1);
 		for (int j = rand1 ; j <= rand2 / 2 ; j++){
 		    swap(randPlacement.structure[j], randPlacement.structure[rand2-j]);
 		    		}
 //		swap(randPlacement.structure[rand1], randPlacement.structure[rand2]);
-		srand(time(0));
+		randPlacement2.calculateFitPlacement(servers, vms);
 		randPlacement.calculateFitPlacement(servers, vms);
+		if(randPlacement.fit > randPlacement2.fit)
+			swap(randPlacement,randPlacement2);
 		float random_number = (float)rand() / RAND_MAX;
 		if (randPlacement.fit < bestFit || random_number <  Hho_attack_rate){
 			pop[i] = randPlacement;
